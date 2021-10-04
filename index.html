@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Checkbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all .4s ease-in-out;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgb(185, 15, 162), rgb(175, 25, 221));
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        .toggle {
+            visibility: hidden;
+        }
+        .checkbox {
+            position: relative;
+            margin: 4rem 0;
+        }
+        .checkbox label {
+            padding: 2rem 8rem;
+            border-radius: 50px;
+            background: #fff;
+            position: relative;
+            cursor: pointer !important;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .checkbox .btn {
+            position: absolute;
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            top: -2.7rem;
+            left: 0;
+            background: #CFD8DC;
+            pointer-events: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .checkbox:nth-child(1) .toggle:checked ~ label {
+            background: #FF4081;
+        }
+        .checkbox:nth-child(2) .toggle:checked ~ label {
+            background: #5C6BC0;
+        }
+        .checkbox:nth-child(3) .toggle:checked ~ label {
+            background: #FFEE58;
+        }
+
+        .checkbox .toggle:checked ~ .btn {
+            left: 65%;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+        .checkbox:nth-child(1) .toggle:checked ~ .btn {
+            background: #F50057;
+        }
+        .checkbox:nth-child(2) .toggle:checked ~ .btn {
+            background: #1A237E;
+        }
+        .checkbox:nth-child(3) .toggle:checked ~ .btn {
+            background: #FFFF00;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="checkbox">
+            <input type="checkbox" class="toggle" id="toggle1">
+            <label for="toggle1"></label>
+            <div class="btn"></div>
+        </div>
+
+        <div class="checkbox">
+            <input type="checkbox" class="toggle" id="toggle2">
+            <label for="toggle2"></label>
+            <div class="btn"></div>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" class="toggle" id="toggle3">
+            <label for="toggle3"></label>
+            <div class="btn"></div>
+        </div>
+        
+    </form>
+</body>
+
+</html>
